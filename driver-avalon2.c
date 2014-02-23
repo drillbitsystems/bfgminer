@@ -376,7 +376,7 @@ static int avalon2_stratum_pkgs(int fd, struct pool *pool, struct thr_info *thr)
 	applog(LOG_DEBUG, "Avalon2: Pool stratum message STATIC: %ld, %d, %d, %d, %d",
 	       (long)bytes_len(&pool->swork.coinbase),
 	       pool->swork.nonce2_offset,
-	       pool->n2size,
+	       pool->swork.n2size,
 	       36,
 	       pool->swork.merkles);
 	memset(pkg.data, 0, AVA2_P_DATA_LEN);
@@ -386,7 +386,7 @@ static int avalon2_stratum_pkgs(int fd, struct pool *pool, struct thr_info *thr)
 	tmp = be32toh(pool->swork.nonce2_offset);
 	memcpy(pkg.data + 4, &tmp, 4);
 
-	tmp = be32toh(pool->n2size);
+	tmp = be32toh(pool->swork.n2size);
 	memcpy(pkg.data + 8, &tmp, 4);
 
 	tmp = be32toh(36);
