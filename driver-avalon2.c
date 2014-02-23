@@ -36,8 +36,8 @@
 
 #include "miner.h"
 #include "driver-avalon2.h"
-#include "crc.h"
 #include "lowl-vcom.h"
+#include "util.h"
 
 #define ASSERT1(condition) __maybe_unused static char sizeof_uint32_t_must_be_4[(condition)?1:-1]
 ASSERT1(sizeof(uint32_t) == 4);

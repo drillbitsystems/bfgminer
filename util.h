@@ -508,5 +508,8 @@ extern uint8_t crc5usb(unsigned char *ptr, uint8_t len);
 extern void bfg_init_checksums(void);
 extern uint8_t crc8ccitt(const void *, size_t);
 
+// CRC-16-CCITT with 0xffff bug
+extern uint16_t crc16(const void *, size_t);
+
 
 #endif /* __UTIL_H__ */
