@@ -8658,6 +8658,11 @@ void stratum_work_clean(struct stratum_work * const swork)
 	bytes_free(&swork->merkle_bin);
 }
 
+bool pool_has_usable_swork(const struct pool * const pool)
+{
+	return pool->stratum_notify;
+}
+
 #ifdef USE_AVALON2
 void submit_nonce2_nonce(struct thr_info *thr, uint32_t pool_no, uint32_t nonce2, uint32_t nonce)
 {
